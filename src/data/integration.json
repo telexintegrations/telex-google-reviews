@@ -1,0 +1,43 @@
+{
+  "data": {
+    "date": {
+      "created_at": "2025-02-09",
+      "updated_at": "2025-02-09"
+    },
+    "descriptions": {
+      "app_name": "Uptime Monitor",
+      "app_description": "A local uptime monitor",
+      "app_logo": "https://i.imgur.com/lZqvffp.png",
+      "app_url": "https://telex-fastapi-uptime-monitor.onrender.com",
+      "background_color": "#fff"
+    },
+    "is_active": false,
+    "integration_type": "interval",
+    "key_features": ["- monitors websites"],
+    "category": "Monitoring",
+    "author": "Osinachi Chukwujama",
+    "website": "https://telex-fastapi-uptime-monitor.onrender.com",
+    "settings": [
+      {
+        "label": "site-1",
+        "type": "text",
+        "required": true,
+        "default": ""
+      },
+      {
+        "label": "site-2",
+        "type": "text",
+        "required": true,
+        "default": ""
+      },
+      {
+        "label": "interval",
+        "type": "text",
+        "required": true,
+        "default": "* * * * *"
+      }
+    ],
+    "target_url": "",
+    "tick_url": "https://telex-fastapi-uptime-monitor.onrender.com/tick"
+  }
+}
