@@ -54,6 +54,6 @@
       }
     ],
     "target_url": "",
-    "tick_url": "https://telex-google-reviews.onrender.com/tick"
+    "tick_url": "https://telex-google-reviews.onrender.com/api/v1/tick"
   }
 }
