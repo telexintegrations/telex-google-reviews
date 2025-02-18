@@ -11,18 +11,46 @@
       "app_url": "https://telex-google-reviews.onrender.com/",
       "background_color": "#fff"
     },
-    "is_active": true,
+
     "integration_type": "interval",
-    "key_features": ["- business reviews on google"],
+    "is_active": true,
+    "output": [
+      {
+        "label": "output_channel_1",
+        "value": true
+      },
+      {
+        "label": "output_channel_2",
+        "value": false
+      }
+    ],
+    "key_features": [
+      "Feature description 1.",
+      "Feature description 2.",
+      "Feature description 3.",
+      "Feature description 4."
+    ],
     "integration_category": "E-commerce & Retail",
     "author": "Eze Prince",
     "website": "princeeze.netlify.app",
+    "permissions": {
+      "monitoring_user": {
+        "always_online": true,
+        "display_name": "Performance Monitor"
+      }
+    },
     "settings": [
       {
-        "label": "Business",
+        "label": "interval",
         "type": "text",
         "required": true,
-        "default": ""
+        "default": "* * * * *"
+      },
+      {
+        "label": "Business Place ID",
+        "type": "text",
+        "required": true,
+        "default": "1234567890"
       }
     ],
     "target_url": "",
