@@ -11,7 +11,7 @@
       "app_url": "https://telex-google-reviews.onrender.com/",
       "background_color": "#fff"
     },
-    "is_active": false,
+    "is_active": true,
     "integration_type": "interval",
     "key_features": ["- business reviews on google"],
     "category": "E-commerce & Retail",
