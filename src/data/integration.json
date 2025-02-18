@@ -14,7 +14,7 @@
     "is_active": true,
     "integration_type": "interval",
     "key_features": ["- business reviews on google"],
-    "category": "E-commerce & Retail",
+    "integration_category": "E-commerce & Retail",
     "author": "Eze Prince",
     "website": "princeeze.netlify.app",
     "settings": [
