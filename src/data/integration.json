@@ -50,7 +50,7 @@
         "label": "Business Place ID",
         "type": "text",
         "required": true,
-        "default": "1234567890"
+        "default": "(Paste Place ID here)"
       }
     ],
     "target_url": "",
