@@ -7,6 +7,7 @@ export const tickController = async (req: Request, res: Response) => {
   res.status(202);
   try {
     const tickRequest: TickRequest = req.body;
+    console.log(tickRequest);
 
     const placeID = tickRequest.settings[1]?.default;
 
