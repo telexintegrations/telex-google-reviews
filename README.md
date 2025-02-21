@@ -69,9 +69,11 @@ This integration enables real-time monitoring of Google Business Reviews directl
 - [x] Initial release with basic review fetching
 - [x] Telex channel integration
 - [x] Basic notification formatting
-- [ ] Fix review sorting
+- [x] Fix review sorting
+- [x] Fix display on telex marketplace
 - [ ] Direct links to reviews
 - [ ] Error handling improvements
+- [ ] Rate limiting
 - [ ] Multi-location support
 - [ ] Review response capabilities
 - [ ] Advanced filtering options

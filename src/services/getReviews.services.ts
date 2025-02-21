@@ -66,5 +66,9 @@ export const getReviews = async (placeID: string) => {
   });
 
   await redis.set(placeID, newReviews[0]?.time);
-  return messages;
+
+  //reverse messages and return
+  const sortedMessages = messages.reverse();
+
+  return sortedMessages;
 };
