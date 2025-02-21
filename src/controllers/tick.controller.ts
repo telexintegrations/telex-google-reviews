@@ -3,36 +3,62 @@ import { getReviews } from "@/services/getReviews.services";
 import { TickRequest } from "@/lib/types";
 
 export const tickController = async (req: Request, res: Response) => {
-  const tickRequest: TickRequest = req.body;
+  // Accept request
+  res.status(202);
   try {
-    // Accept request
-    res.status(202).json({});
+    const tickRequest: TickRequest = req.body;
 
-    const placeID = tickRequest.settings[1].default;
+    const placeID = tickRequest.settings[1]?.default;
 
-    // Fetch messages
+    if (!placeID) {
+      console.error("Missing Place ID in settings.");
+
+      // Send an error response to the return_url
+      await fetch(tickRequest.return_url, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          event_name: `No Place ID`,
+          message:
+            "Please input your business place ID in the integration settings",
+          status: "error",
+          username: "Google Reviews Bot",
+        }),
+      });
+    }
+    // Fetch reviews
     const telexMessages = await getReviews(placeID);
 
-    try {
-      telexMessages.forEach(async (message) => {
+    if (telexMessages.length === 0) {
+      console.log("No new reviews to send.");
+      return;
+    }
+
+    // Send messages to Telex
+    const responses = await Promise.allSettled(
+      telexMessages.map(async (message) => {
         const telexResponse = await fetch(tickRequest.return_url, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(message),
         });
+
         if (!telexResponse.ok) {
-          console.error(
-            "Telex notification failed:",
-            await telexResponse.text()
-          );
+          const errorText = await telexResponse.text();
+          console.error("Telex notification failed:", errorText);
+          throw new Error(`Telex error: ${errorText}`);
         } else {
-          console.log("Telex notification sent successfully");
+          console.log("Telex notification sent successfully.");
         }
-      });
-    } catch (error) {
-      console.error("Error during telex messaging:", error);
-      throw error;
-    }
+      })
+    );
+
+    // Log any rejected requests
+    responses.forEach((result) => {
+      if (result.status === "rejected") {
+        console.error("Error sending Telex message:", result.reason);
+      }
+    });
   } catch (error) {
     console.error("Error during tick operation:", error);
     res
