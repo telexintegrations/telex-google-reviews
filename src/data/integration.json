@@ -7,7 +7,7 @@
     "descriptions": {
       "app_name": "Google Reviews Bot",
       "app_description": "Real-time monitoring of Google Business Reviews directly on Telex",
-      "app_logo": "https://imgur.com/a/G36SXt4",
+      "app_logo": "https://github.com/telexintegrations/telex-google-reviews/blob/master/README/google-reviews-logo.png?raw=true",
       "app_url": "https://github.com/telexintegrations/telex-google-reviews",
       "background_color": "#fff"
     },
