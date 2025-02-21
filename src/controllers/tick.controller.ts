@@ -26,6 +26,7 @@ export const tickController = async (req: Request, res: Response) => {
           username: "Google Reviews Bot",
         }),
       });
+      return;
     }
     // Fetch reviews
     const telexMessages = await getReviews(placeID);
