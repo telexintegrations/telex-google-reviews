@@ -4,7 +4,7 @@ import { TickRequest } from "@/lib/types";
 
 export const tickController = async (req: Request, res: Response) => {
   // Accept request
-  res.status(202);
+  res.status(202).json({});
   try {
     const tickRequest: TickRequest = req.body;
     console.log(tickRequest);
