@@ -13,7 +13,7 @@ This integration enables real-time monitoring of Google Business Reviews directl
 
 ## Usage
 
-1. Add the integration using `https://telex-google-reviews.onrender.com/api/v1/integration.json`
+1. Add the integration using `https://telex-google-reviews-3x25.onrender.com/api/v1/integration.json`
 2. [Search for your business place ID](https://developers.google.com/maps/documentation/javascript/examples/places-placeid-finder)
 3. Copy the place ID and save it in the integration settings
 4. Set your desired interval
