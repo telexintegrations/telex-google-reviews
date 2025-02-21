@@ -45,7 +45,7 @@
         "label": "Business Place ID",
         "type": "text",
         "required": true,
-        "default": ""
+        "default": "(Enter Place ID)"
       }
     ],
     "target_url": "",

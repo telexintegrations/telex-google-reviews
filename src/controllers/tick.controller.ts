@@ -10,7 +10,7 @@ export const tickController = async (req: Request, res: Response) => {
 
     const placeID = tickRequest.settings[1]?.default;
 
-    if (!placeID) {
+    if (placeID === "" || placeID === "(Enter Place ID)" || !placeID) {
       console.error("Missing Place ID in settings.");
 
       // Send an error response to the return_url
