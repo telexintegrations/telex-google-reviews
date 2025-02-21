@@ -36,9 +36,9 @@ export const tickController = async (req: Request, res: Response) => {
       return;
     }
 
-    // Send messages to Telex
-    const responses = await Promise.allSettled(
-      telexMessages.map(async (message) => {
+    // Send messages to Telex with a delay
+    for (const message of telexMessages) {
+      try {
         const telexResponse = await fetch(tickRequest.return_url, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -52,15 +52,13 @@ export const tickController = async (req: Request, res: Response) => {
         } else {
           console.log("Telex notification sent successfully.");
         }
-      })
-    );
-
-    // Log any rejected requests
-    responses.forEach((result) => {
-      if (result.status === "rejected") {
-        console.error("Error sending Telex message:", result.reason);
+      } catch (error) {
+        console.error("Error sending Telex message:", error);
       }
-    });
+
+      // Add a 2-second delay before sending the next request
+      await new Promise((resolve) => setTimeout(resolve, 2000));
+    }
   } catch (error) {
     console.error("Error during tick operation:", error);
     res
