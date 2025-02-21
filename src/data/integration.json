@@ -2,13 +2,13 @@
   "data": {
     "date": {
       "created_at": "2025-02-18",
-      "updated_at": "2025-02-18"
+      "updated_at": "2025-02-21"
     },
     "descriptions": {
-      "app_name": "Google Reviews",
-      "app_description": "A local uptime monitor",
-      "app_logo": "https://i.imgur.com/J5vaGQB.png",
-      "app_url": "https://telex-google-reviews.onrender.com/",
+      "app_name": "Google Reviews Bot",
+      "app_description": "Real-time monitoring of Google Business Reviews directly on Telex",
+      "app_logo": "https://imgur.com/a/G36SXt4",
+      "app_url": "https://github.com/telexintegrations/telex-google-reviews",
       "background_color": "#fff"
     },
 
@@ -24,12 +24,7 @@
         "value": false
       }
     ],
-    "key_features": [
-      "Feature description 1.",
-      "Feature description 2.",
-      "Feature description 3.",
-      "Feature description 4."
-    ],
+    "key_features": ["Business Reviews on Google"],
     "integration_category": "E-commerce & Retail",
     "author": "Eze Prince",
     "website": "princeeze.netlify.app",
